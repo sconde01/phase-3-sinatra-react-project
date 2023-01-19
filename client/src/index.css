@@ -1,13 +1,164 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  background-color: #f0e3e3;
+}
+
+body {
+  color: #999999;
+  font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 1rem;
+  text-rendering: optimizeLegibility;
+  
+}
+
+#main-header{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 10rem;
+  border-radius: 30%;
+  opacity: 80%;
+}
+
+.centered {
+  text-align: center;
+}
+
+
+/* .search {
+  width: 50%;
+  text-align: center;
+
+  position: relative;
+  display: block;
+  margin: auto;
+  padding: 2rem;
+} */
+
+/* .searchTerm {
+  text-align: center;
+  width: 100%;
+  border: 3px solid #990033;
+  padding: 5px;
+  height: 3rem;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1.5rem;
+} */
+
+
+.AddGoalbtn {
+  display: block;
+  color: #d83333;
+  font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+}
+
+
+.delete_button {
+  margin-top: 1px;
+  margin-right: 1px;
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap ;
+  list-style: none;
+  margin: 5;
+  padding: 0;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+  width: 35;
+}
+
+.card {
+  background-color: white;
+  border-radius: 5px; /* 5px rounded corners */
+  display:block ;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card_content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+  font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+
+}
+
+.card_title {
+  color: #000000;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.card_text, .card_detail p {
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.card_detail .delete_button{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0;
+}
+
+.card_detail p {
+  text-align: center;
+}
+
+.card_detail button{
+  text-align:center;
+}
+
+nav {
+  background-color: white;
+}
+
+nav a {
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.25rem;
+  text-decoration: none;
+  font-size: 13pt;
+  color: rgb(8, 8, 8);
+  border-bottom: 2px solid rgb(178, 34, 176);
+  transition: 0.1s;
+  font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+
+}
+
+nav a:hover,
+nav a:active {
+  color: rgb(247, 246, 246);
+  border-bottom: 2px solid rgb(140, 96, 140);
+}
+
+nav a.active {
+  color: white;
+  background: rgb(232, 193, 237);
 }

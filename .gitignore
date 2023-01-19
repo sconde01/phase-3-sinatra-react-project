@@ -16,3 +16,6 @@
 
 # Canvas-specific .results.json
 .results.json
+#./client/node_modules
+
+NOTES.md
