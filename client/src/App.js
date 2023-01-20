@@ -7,7 +7,6 @@ import GoalForm from './Components/Goals/GoalForm';
 import Tasks from './Components/Tasks/Tasks';
 import TaskForm from './Components/Tasks/TaskForm.jsx';
 import { baseUrl } from './Components/Static/Globals';
-import TaskCard from './Components/Tasks/TaskCard';
 // import TaskDetails from './Components/Tasks/TaskDetails';
 
 
@@ -41,36 +40,6 @@ const App = () => {
         setTasks(tasks.filter( task => task.id !== id))
       }
 
-   //UPDATE-PATCH completed boolean
-  //  const handleMarkCompleted = (id) => {
-  //   fetch(baseUrl + `tasks/${id}`, {
-  //     method: "PATCH",
-  //     headers,
-  //     body: JSON.stringify({
-  //       completed: !tasks.completed,
-  //     }),
-  //   })
-  //     .then(r => r.json())
-  //     .then(()=> tasks.map((task) => {
-  //       if (task.id === id) {
-  //         return id;
-  //       } else {
-  //         return task;
-  //       }
-  //     }), setTasks(id))
-  //   }
- 
-
-  
-  //   const updatedTask =  tasks.map((task) => {
-  //     if (task.id === updatedTask.id) {
-  //       return updatedTask;
-  //     } else {
-  //       return task;
-  //     }
-  //   });
-  //  setTasks(updatedTask);
-  // }
   
   //CREATE (form helpers)
   const addGoal = goal => {
@@ -101,13 +70,8 @@ const App = () => {
         <Route path="/goals" element={<Goals goals={goals} />} />
         <Route path="/goals/new" element={ <GoalForm addGoal={addGoal}/> } />
         
-        <Route path="/tasks/" element={ <Tasks tasks={ tasks } handleDeleteTask={handleDeleteTask}
-        // onUpdatedCompleted={handleCompletedTask}
-          /> } />
-        
-        <Route path="/tasks/TaskCard" element={ <TaskCard onUpdatedCompleted={handleCompletedTask} /> } />
-      
-        <Route path="/tasks/new" element={ <TaskForm addTask={ addTask } addGoal={addGoal}/> } />
+        <Route path="/tasks/" element={ <Tasks tasks={ tasks }  handleDeleteTask={handleDeleteTask} onUpdatedCompleted={handleCompletedTask} /> } />            
+        <Route path="/tasks/new" element={ <TaskForm addTask={ addTask } addGoal={addGoal} goals={goals}/> } />
         {/* <Route exact path= "/goals/:id" element={ <TaskDetails goals={goals} /> } /> */}
       </Routes>
     </Router>

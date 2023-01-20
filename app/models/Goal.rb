@@ -1,5 +1,5 @@
 class Goal < ActiveRecord::Base
-  has_many :tasks
+  has_many :tasks, dependent: :destroy
 
   #returns all goals in order by nearest due_date 
   def self.all_goals

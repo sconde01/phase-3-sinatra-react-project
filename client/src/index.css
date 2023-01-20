@@ -33,31 +33,16 @@ body {
 }
 
 
-/* .search {
-  width: 50%;
-  text-align: center;
 
-  position: relative;
+.cards_goals, .task-btn {
   display: block;
-  margin: auto;
-  padding: 2rem;
-} */
-
-/* .searchTerm {
-  text-align: center;
-  width: 100%;
-  border: 3px solid #990033;
-  padding: 5px;
-  height: 3rem;
-  border-radius: 5px;
-  outline: none;
-  font-size: 1.5rem;
-} */
-
-
-.AddGoalbtn {
+  color: #430fa3;
+  font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+}
+.task-btn {
   display: block;
-  color: #d83333;
+  color: #430fa3;
   font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: normal;
 }
@@ -132,6 +117,16 @@ body {
 
 .card_detail button{
   text-align:center;
+}
+
+
+.Tasks button.taskdone {
+  background-color: rgb(139, 184, 139);
+}
+
+.Tasks button.tasknotdone {
+  background-color: rgb(241, 78, 78);
+  color: white;
 }
 
 nav {

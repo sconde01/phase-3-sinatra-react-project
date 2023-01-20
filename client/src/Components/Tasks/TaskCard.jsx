@@ -17,7 +17,6 @@ const TaskCard = ({task, deleteTask, onUpdatedCompleted}) => {
 
   return (
     <li className="cards_item">
-      <li className={task.completed ? "completed" : ""}>
       <div className="card">
       <div className="card_content"> 
         <div className="card_title"> { task.name } </div>
@@ -26,17 +25,21 @@ const TaskCard = ({task, deleteTask, onUpdatedCompleted}) => {
         <p className= "card_text"> Goal: { task.goal.name  }</p>  
             <br/>
         
-      <button className={task.completed ? "task completed" : "task not completed"}
+      <div className={task.completed ? "completed" : ""}>
+      <button className={task.completed ? "taskdone" : "tasknotdone"}
           onClick={handleChangeCompleteClick}>
-            {task.completed ? "This task is:" : "This task is NOT:"} Completed
+            {task.completed ? "Great," : "NOT"} Completed!
           </button>
+      </div>
 
         <br></br>
-        <button className="delete_buttton" onClick={ () => deleteTask(task.id)}> Delete </button>
+        <button className="delete_buttton" onClick={ () => deleteTask(task.id)}> 
+            <span role="img" aria-label="delete">
+              🗑 </span>
+        </button>
         </div>
     </div>
     </div>
-    </li>
   </li>
     
   )
