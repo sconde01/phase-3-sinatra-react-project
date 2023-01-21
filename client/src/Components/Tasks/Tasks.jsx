@@ -20,8 +20,8 @@ const Tasks = ({ tasks, handleDeleteTask , onUpdatedCompleted}) => {
     <div>
       <h1> TASKS </h1>
       <ul className= "Tasks">
-       { taskCard} 
        <div className="task-btn"> <Link to ="/tasks/new"> <button>Add New Task</button></Link>
+       { taskCard} 
        </div>
        </ul>
     </div>

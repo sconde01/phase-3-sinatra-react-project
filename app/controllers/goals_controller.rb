@@ -2,7 +2,7 @@ class GoalsController < ApplicationController
 
   #index route
   get "/goals" do
-    @goals = Goal.all
+    @goals = Goal.all_goals
     @goals.to_json(include: [:tasks])
   end
 

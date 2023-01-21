@@ -21,15 +21,13 @@ const TaskCard = ({task, deleteTask, onUpdatedCompleted}) => {
       <div className="card_content"> 
         <div className="card_title"> { task.name } </div>
        <p className="card_text">Description:<br/>{ task.description }</p>
-      <div className="card_detail">
-        <p className= "card_text"> Goal: { task.goal.name  }</p>  
-            <br/>
-        
+        <p className= "card_text"> What is your Goal:<br/> <mark>{ task.goal.name  }</mark></p>  
+      <div className="card_detail"> 
       <div className={task.completed ? "completed" : ""}>
-      <button className={task.completed ? "taskdone" : "tasknotdone"}
+        <button className={task.completed ? "taskdone" : "tasknotdone"}
           onClick={handleChangeCompleteClick}>
             {task.completed ? "Great," : "NOT"} Completed!
-          </button>
+        </button>
       </div>
 
         <br></br>

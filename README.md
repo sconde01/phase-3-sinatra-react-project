@@ -1,6 +1,6 @@
 # Phase 3 Project at Flatiron School
 
-This is a project that I completed while attending Flatiron School as a Software Engineer student.
+This is a project that I completed while attending Flatiron School as a Software Engineer student. My idea for this project was to create a Goal and Task Tracker--where one can create a goal and then create tasks for that goal. 
 
 ## Learning Goal for this project:
 
@@ -27,6 +27,9 @@ by a separate **React frontend** that interacts with the database via the API.
 1. cd into client and run npm start
 2. run bundle exec rake server 
 3. navigate in brq to https://localhost/3000
+
+## Stretch Future Goals
+In the future, I would want to click into each task, it have a time tracker and the ability to create a journal entry for that task all in hopes to track productivity and progress.
 
 ## MIT license
 Copyright 2023 Stephanie Conde 

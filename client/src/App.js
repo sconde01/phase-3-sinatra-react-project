@@ -7,7 +7,6 @@ import GoalForm from './Components/Goals/GoalForm';
 import Tasks from './Components/Tasks/Tasks';
 import TaskForm from './Components/Tasks/TaskForm.jsx';
 import { baseUrl } from './Components/Static/Globals';
-// import TaskDetails from './Components/Tasks/TaskDetails';
 
 
 const App = () => {
@@ -40,6 +39,19 @@ const App = () => {
         setTasks(tasks.filter( task => task.id !== id))
       }
 
+  //DELETE GOALS
+  const handleDeleteGoal = id => {
+    fetch(baseUrl + `/goals/${id}`, {
+      method: "DELETE", 
+    })
+    .then(r => r.json())
+    .then(() => removeGoal(id))
+    ;}
+
+      const removeGoal = id => {
+        setGoals(goals.filter( goal => goal.id !== id))
+      }
+
   
   //CREATE (form helpers)
   const addGoal = goal => {
@@ -48,9 +60,10 @@ const App = () => {
   const addTask = task => {
     setTasks([...tasks, task])
     }
-    //PATCH helper
-    const handleCompletedTask= (updatedCompleted) =>{
-      const updatedCompletedTasks = tasks.map((task) => {
+
+  //PATCH helper
+  const handleCompletedTask= (updatedCompleted) =>{
+    const updatedCompletedTasks = tasks.map((task) => {
         if (task.id === updatedCompleted.id) {
           return updatedCompleted;
         } else {
@@ -67,12 +80,13 @@ const App = () => {
       <NavBar />
       <Routes>
         
-        <Route path="/goals" element={<Goals goals={goals} />} />
+        <Route path="/goals" element={<Goals goals={goals} handleDeleteGoal={handleDeleteGoal}
+        />} />
         <Route path="/goals/new" element={ <GoalForm addGoal={addGoal}/> } />
         
         <Route path="/tasks/" element={ <Tasks tasks={ tasks }  handleDeleteTask={handleDeleteTask} onUpdatedCompleted={handleCompletedTask} /> } />            
         <Route path="/tasks/new" element={ <TaskForm addTask={ addTask } addGoal={addGoal} goals={goals}/> } />
-        {/* <Route exact path= "/goals/:id" element={ <TaskDetails goals={goals} /> } /> */}
+
       </Routes>
     </Router>
   );

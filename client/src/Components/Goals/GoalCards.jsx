@@ -1,9 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const GoalCards = ({ goal}) => {
+const GoalCards = ({ goal, deleteGoal}) => {
 
-  //****I want to a lists of tasks on goalCard instead of a link */
+//map tasks ul
+    const tasks_li = goal.tasks.map( task =>
+      <li key={task.id} >{task.name}</li>
+      )
+    
+//alert delete goals AND tasks
+    const clickDeleteAlert = ()=> {
+      alert("Goal and it's tasks are now deleted!!")
+    }
+
 
   return (
     <li className="cards_item">
@@ -11,20 +20,19 @@ const GoalCards = ({ goal}) => {
         <div className="card_content"> 
            <div className="card_title"> { goal.name } </div>  
          
-              <p className="card_text">Due: { goal.due_date }</p>
-              <p className=" "> Task: { goal.tasks.name }</p>
-                  
-                  <div className="card_detail">
-
-                    {/* <li><Link to={`/task/${goal.id}`}>See Tasks</Link> </li> */}
-
-                     <Link to ="/tasks/new"> <button>Add a task</button></Link>
-                    
-                    <br/>
-                
-          
-                  </div>
+            <p className="card_text">Due: { goal.due_date }</p>
+              <ul>{tasks_li}</ul>    
+            <br></br>
+          <div className="card_detail">
+           <Link to ="/tasks/new"> <button >Add a task </button></Link>
+            <br></br>
+            <br></br>
+            <button className="delete_goal" onClick={ () => {deleteGoal(goal.id); clickDeleteAlert();}
+            } > 
+              <span role="img" aria-label="delete"> 🗑 </span>
+            </button>
           </div>
+        </div>
       </div>
     </li>
   )

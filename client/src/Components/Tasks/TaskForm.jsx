@@ -2,11 +2,10 @@ import React, {useState} from 'react';
 import { baseUrl, headers } from '../Static/Globals';
 import { useNavigate } from "react-router-dom";
 
-const Tasknew = ({addTask, addGoal, goals}) => {
+const Tasknew = ({addTask, goals}) => {
   const [name, setTaskName] = useState("");
-  const [description, setDescription] = useState();
-  // const [goal_name, setGoalName] = useState("");
-  const [goal_id, setGoalId] = useState();
+  const [description, setDescription] = useState("");
+  const [goal_id, setGoalId] = useState("");
 
   const navigate = useNavigate(); 
   
@@ -15,9 +14,7 @@ const Tasknew = ({addTask, addGoal, goals}) => {
     description,
     goal_id
   }
-  // const goal_params = {
-  //   goal_name,
-  // }
+
   
   const handleSubmit = e => {
     e.preventDefault();
@@ -32,17 +29,10 @@ const Tasknew = ({addTask, addGoal, goals}) => {
       addTask(data);
       navigate('/tasks');
     });
-  
-  // fetch(baseUrl + "/goals", {
-  //   method: "POST",
-  //   headers,
-  //   body: JSON.stringify(goal_params)
-  //   })
-  //   .then(r => r.json())
-  //   .then(data => {
-  //     addGoal(data);
-  //   });
   }
+  
+  const goal_drop_map = goals.map( goal => 
+    <option value={goal.id} key={goal.id}>{goal.name}</option> )
 
 
   return (
@@ -51,7 +41,6 @@ const Tasknew = ({addTask, addGoal, goals}) => {
       
       <form onSubmit={handleSubmit}>
           <div>
-            {/* TASK NAME */}
             <label htmlFor="name">Task NAME: </label>
             <input type="text" name="name" id="name" value={ name} 
             onChange={e => setTaskName(e.target.value)} />
@@ -59,30 +48,18 @@ const Tasknew = ({addTask, addGoal, goals}) => {
 
         <br></br>
 
-            {/* TASK DESCRIPTION */}
-          <div>
-            <label htmlFor="due_date">Description:</label>
-            <input type="text" name="description" id="due_date" value={ description} onChange={e => setDescription(e.target.value)} />
+          <div >
+            <label htmlFor="description">Description:</label>
+            <input type="text" name="description" id="description" value={ description} onChange={e => setDescription(e.target.value)} />
           </div>
 
         <br></br>
-
-          {/* GOAL NAME */}
-          {/* <div> */}
-            {/* <label htmlFor="name">What Is Your Goal?: </label> */}
-      {/* ***??? */}
-            {/* <input type="text" name="goal_name" id="goal_name" value={ goal_name} 
-            onChange={e => setGoalName(e.target.value)} />
-          </div> */}
 
         <label>
         <strong>Filter Goal Name:</strong>
         <select 
           id = "goal_id"
-            onChange={e => setGoalId(e.target.value)}value={goal_id}>
-
-          {goals.map( goal => 
-            <option value={goal.id}>{goal.name}</option> )}
+            onChange={e => setGoalId(e.target.value)}value={goal_id}>{goal_drop_map}
         </select>
       </label>
 

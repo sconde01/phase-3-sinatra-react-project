@@ -6,11 +6,13 @@
 
 html {
   background-color: #f0e3e3;
+  background-image: url(https://images.template.net/wp-content/uploads/2014/08/Skulls.png);
+
 }
 
 body {
-  color: #999999;
-  font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #58b87d;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0;
@@ -93,14 +95,16 @@ body {
 .card_title {
   color: #000000;
   font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
+  text-decoration: underline dotted #58b87d;
 }
 
 .card_text, .card_detail p {
   flex: 1 1 auto;
-  font-size: 0.875rem;
+  font-size: 0.975rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height: 1.5;
   margin-bottom: 1.25rem;
 }
@@ -129,6 +133,10 @@ body {
   color: white;
 }
 
+/* .Tasks .task-btn{
+ 
+} */
+
 nav {
   background-color: white;
 }
@@ -140,9 +148,9 @@ nav a {
   text-decoration: none;
   font-size: 13pt;
   color: rgb(8, 8, 8);
-  border-bottom: 2px solid rgb(178, 34, 176);
+  border-bottom: 2px solid #58b87d;
   transition: 0.1s;
-  font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-style: normal;
 
 }
